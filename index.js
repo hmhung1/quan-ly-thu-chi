@@ -10,7 +10,7 @@ const dashboard = http.createServer((_req, res) => {
   });
   const port = process.env.PORT || 6788;
   dashboard.listen(port, () => {
-    loader(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
   });
   
 
