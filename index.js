@@ -1,6 +1,18 @@
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 const mongoose = require('mongoose');
+const http = require('http');
+
+const dashboard = http.createServer((_req, res) => {
+    res.writeHead(200, "OKay", { "Content-Type": "text/html" });
+    res.write("Hello from Delta :>");
+    res.end();
+  });
+  const port = process.env.PORT || 6788;
+  dashboard.listen(port, () => {
+    loader(`Server is running on http://localhost:${port}`);
+  });
+  
 
 mongoose.connect(process.env.MONGODB_URI);
 
