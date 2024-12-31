@@ -26,7 +26,7 @@ const transactionSchema = new mongoose.Schema({
 
 const Transaction = mongoose.model('Transaction', transactionSchema);
 
-const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: false });
+const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 bot.setMyCommands([
     { command: 'start', description: 'Hiển thị hướng dẫn sử dụng' },
     { command: 'wallet', description: 'Xem số dư tài khoản' },
